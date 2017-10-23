@@ -16,8 +16,9 @@ print lexer.tokenize("static unsigned int foo = bar++;")
 You should get your tokens in a list of the following format:
 
 ```
-[('STATIC', 'static'), ('UNSIGNED', 'unsigned'), ('INT', 'int'), ('IDENTIFIER', 'foo'), ('ASSIGN', '='), ('IDENTIFIER', 'bar'), ('INC', '++'), ('SEMICOLON', ';')]
+[('KW_STATIC', 'static'), ('KW_UNSIGNED', 'unsigned'), ('KW_INT', 'int'), ('IDENTIFIER', 'foo'), ('OP_ASSIGN', '='), ('IDENTIFIER', 'bar'), ('OP_INC', '++'), ('SYM_SEMICOLON', ';')]
 ```
+Language symbols are prefixed with `SYM_`, operators are prefixed with `OP_`, keywords are prefixed with `KW_`. Keep in mind that context-dependent tokens (`&`, `*`, `+`, `-`) are prefixed with `SYM_`.
 
 If you want the whitespace characters preserved in your tokens list, set `keep_whitespaces` in the object constructor:
 
