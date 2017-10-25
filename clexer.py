@@ -13,8 +13,6 @@ import sys
 
 class C99Lexer():
     _c99_desc = [
-        # Labels
-        ("[a-zA-Z_]+\w*?\:","LABEL"),
         # Comments
         ("\/\*.*?\*\/",     "COMMENT"),
         ("\/\/.*$",         "CPP_COMMENT"),
@@ -106,6 +104,8 @@ class C99Lexer():
         ("_Bool",           "KW_BOOL"),
         ("_Complex",        "KW_COMPLEX"),
         ("_Imaginary",      "KW_IMAGINARY"),
+        # Labels
+        ("[a-zA-Z_]+\w*?\:","LABEL"),
         # Macros
         ("#define\s.*?$",   "M_DEFINE"),
         ("#undef\s.*?$",    "M_UNDEF"),
