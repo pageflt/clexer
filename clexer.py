@@ -13,8 +13,8 @@ import sys
 
 class C99Lexer():
     _c99_desc = [
-		# Labels
-		("[a-zA-Z_]+\w*?\:","LABEL"),
+        # Labels
+        ("[a-zA-Z_]+\w*?\:","LABEL"),
         # Comments
         ("\/\*.*?\*\/",     "COMMENT"),
         ("\/\/.*$",         "CPP_COMMENT"),
